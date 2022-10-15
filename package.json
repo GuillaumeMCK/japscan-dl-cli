@@ -1,0 +1,34 @@
+{
+  "name": "japscan-dl-cli",
+  "version": "0.0.1",
+  "description": "Download manga from japscan.xx without using browser automation",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "watch": "tsc -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GuillaumeMCK/japscan-dl-cli.git"
+  },
+  "keywords": [
+    "japscan",
+    "manga",
+    "download",
+    "cli",
+    "typescript",
+    "nodejs",
+    "deobfuscation",
+    "scraping"
+  ],
+  "author": "GuillaumeMCK",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/GuillaumeMCK/japscan-dl-cli/issues"
+  },
+  "homepage": "https://github.com/GuillaumeMCK/japscan-dl-cli#readme",
+  "dependencies": {
+    "commander": "^9.4.1"
+  }
+}
