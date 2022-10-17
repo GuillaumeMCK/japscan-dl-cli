@@ -1,4 +1,4 @@
-function banner(paddingLeft: number = 0, paddingTop: number = 0) {
+function banner({paddingLeft = 0, paddingTop = 0,  version}:{paddingLeft:number, paddingTop:number, version:string}) {
     const pl = ' '.repeat(paddingLeft)
     const pt = '\n'.repeat(paddingTop)
     // Font : Calvin S.
@@ -35,8 +35,8 @@ function banner(paddingLeft: number = 0, paddingTop: number = 0) {
         if (charset < 2) finalBanner.push('\n');
         init_color++;
     }
-    process.stdout.write(finalBanner.join('') + '\n');
-    console.log(`\x1b[90m${pl}                     by Guillaume.MCK\x1b[0m\n`);
+    process.stdout.write(`${finalBanner.join('')}\n`);
+    process.stdout.write(`\x1b[90mv${version+pl}                     by Guillaume.MCK\x1b[0m\n`);
 }
 
 export default banner;

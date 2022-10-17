@@ -15,7 +15,7 @@ program
 
 const options = program.opts();
 
-banner(5,1);
+banner({paddingLeft: 5, paddingTop: 1, version: program.version()});
 
 switch (true) {
   case options.download:
