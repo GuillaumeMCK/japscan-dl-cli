@@ -8,7 +8,7 @@ program
   .option('-d, --download', 'Download a manga')
   .option('-c, --chapter <first_chapter> <last_chapter>', 'Download one or more chapters')
   .option('-f, --format <pdf, cbz, raw>', 'Download in specific format')
-  .option('-c, --convert <pdf, cbz, raw>', 'Convert a manga to specific format')
+  .option('-c, --convert <pdf, cbz, raw> <path> <output>', 'Convert a file to another format')
   .option('-s, --search <manga_name>', 'Search a manga')
   .option('-u, --update-url <manga_url>', 'Update manga url')
   .parse(process.argv);
