@@ -1,7 +1,14 @@
-function banner({paddingLeft = 0, paddingTop = 0,  version}:{paddingLeft:number, paddingTop:number, version:string}) {
+import Size from "../models/size";
+import {clearScreen} from "../services/terminal";
+
+function banner({
+                    paddingLeft = 0,
+                    paddingTop = 0,
+                    version
+                }: { paddingLeft: number, paddingTop: number, version: string }): Size {
+    clearScreen();
     const pl = ' '.repeat(paddingLeft)
     const pt = '\n'.repeat(paddingTop)
-    // Font : Calvin S.
     const J = [[' ', ' ', '┬', ' '], [' ', ' ', '│', ' '], [' ', '└', '┘', ' ']]
     const A = [['┌', '─', '┐', ' '], ['├', '─', '┤', ' '], ['┴', ' ', '┴', ' ']];
     const P = [['┌', '─', '┐', ' '], ['├', '─', '┘', ' '], ['┴', ' ', ' ', ' ']];
@@ -13,12 +20,11 @@ function banner({paddingLeft = 0, paddingTop = 0,  version}:{paddingLeft:number,
     const SPACE = [['', ' ', '', ' '], ['', '─', '', ' '], ['', ' ', '', ' ']];
     const banner = [J, A, P, S, C, A, N, SPACE, D, L];
     const finalBanner = [] as string[];
-    let cl = 0 
+    let cl = 0
     let init_color = 114;
     let txt_color = init_color
-    // add padding
     process.stdout.write(pt);
-    banner[0].forEach((row) => row[0] = pl + row[0]);
+    banner[0].forEach((row: string[]) => row[0] = pl + row[0]);
     // build banner
     for (let charset = 0; charset < 3; charset++) {
         for (let pos = 0; pos < banner.length; pos++) {
@@ -36,7 +42,12 @@ function banner({paddingLeft = 0, paddingTop = 0,  version}:{paddingLeft:number,
         init_color++;
     }
     process.stdout.write(`${finalBanner.join('')}\n`);
-    process.stdout.write(`\x1b[90mv${version+pl}                     by Guillaume.MCK\x1b[0m\n`);
+    process.stdout.write(`\x1b[38;2;175;175;215mv${version + pl}                     by Guillaume.MCK\x1b[0m\n`);
+
+    return {
+        height: banner[0].length + paddingTop + 2,
+        width: banner.length * 4 + paddingLeft + 4
+    }
 }
 
 export default banner;

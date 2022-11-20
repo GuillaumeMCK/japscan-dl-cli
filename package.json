@@ -7,7 +7,7 @@
     "test": "jest",
     "build": "tsc",
     "watch": "tsc -w",
-    "start": "node ./build/index.js"
+    "start": "node ./build/src/index.js"
   },
   "repository": {
     "type": "git",
@@ -31,7 +31,11 @@
   "homepage": "https://github.com/GuillaumeMCK/japscan-dl-cli#readme",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
-    "commander": "^9.4.1"
+    "boxen": "^7.0.0",
+    "chalk": "^5.1.2",
+    "commander": "^9.4.1",
+    "figlet": "^1.5.2",
+    "inquirer": "^9.1.4"
   },
   "devDependencies": {
     "@types/jest": "^29.1.2",
